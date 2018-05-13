@@ -8,6 +8,28 @@
     android:paddingTop="16dp"
     tools:context=".MainActivity">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Enter Your Name"
+        android:id="@+id/name_edittext"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOPPINGS"
+        android:layout_marginBottom="16dp"/>
+
+    <CheckBox
+        android:id="@+id/notify_me_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/notify_me"
+        android:layout_marginBottom="16dp"
+        android:paddingHorizontal="24dp"
+        android:textAppearance="?android:textAppearanceMedium" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:text="0"
+            android:text="2"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
@@ -48,15 +70,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Price"
+        android:text="Order Summary"
         android:textAllCaps="true" />
 
     <TextView
-        android:id="@+id/price_text_view"
+        android:id="@+id/orderSummary_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="$0"
+        android:text="$"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
 

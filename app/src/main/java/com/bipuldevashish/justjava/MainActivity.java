@@ -3,14 +3,16 @@ package com.bipuldevashish.justjava;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.NumberFormat;
-
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 0;
+    EditText editText;
+    String hasWhippedCream,name;
+    int quantity = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void decrement(View view){
         if (quantity <= 0){
-            Toast.makeText(MainActivity.this,"Invalid input please try again",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Invalid input please try again",
+                    Toast.LENGTH_SHORT).show();
         }
         else {
             quantity = quantity - 1;
@@ -32,8 +35,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view){
-        String priceMessage = ("Total = $" + quantity*5 + "\n" +"Thank you!");
-        displayMessage(priceMessage);
+        int price = calculatePrice();
+        EditText editText = findViewById(R.id.name_edittext);
+        name = editText.getText().toString();
+        CheckBox checkBox = findViewById(R.id.notify_me_checkbox);
+        if (checkBox.isChecked()){
+            hasWhippedCream = "yes";
+        }
+        else{
+            hasWhippedCream = "No";
+        }
+        orderSummary(price,quantity,name,hasWhippedCream);
+    }
+
+    public void orderSummary(int value,int quantity,String name,String cream){
+        TextView textView = findViewById(R.id.orderSummary_text_view);
+        textView.setText("Name = "+ name + "\n" +"Quantity = " + quantity + "\n"
+                +"Wipped cream = " + cream +  "\n" + "Total = $" + value + "\n" +"Thank you!");
+    }
+
+    private int calculatePrice() {
+        int price = quantity *5;
+        return price;
     }
 
     public void display(int number){
@@ -41,13 +64,4 @@ public class MainActivity extends AppCompatActivity {
         textView.setText("" + number);
     }
 
-    public void displayPrice(int number){
-        TextView textView = findViewById(R.id.price_text_view);
-        textView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    private void displayMessage(String message) {
-        TextView priceTextView = findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
-    }
 }
