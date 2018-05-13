@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void orderSummary(int value,int quantity,String name,String cream){
         TextView textView = findViewById(R.id.orderSummary_text_view);
-        textView.setText("Name = "+ name + "\n" +"Quantity = " + quantity + "\n"
-                +"Wipped cream = " + cream +  "\n" + "Total = $" + value + "\n" +"Thank you!");
+        textView.setText("Name - "+ name + "\n" +"Quantity - " + quantity + "\n"
+                +"Wipped cream - " + cream +  "\n" + "Total - $" + value + "\n" +"Thank you!");
     }
 
     private int calculatePrice() {

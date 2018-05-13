@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
         android:hint="Enter Your Name"
         android:id="@+id/name_edittext"/>
     <TextView
@@ -89,4 +98,6 @@
         android:onClick="submitOrder"
         android:text="Order" />
 
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
