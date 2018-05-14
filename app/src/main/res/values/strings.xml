@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Just Java</string>
-    <string name="notify_me">Whipped cream</string>
+    <string name="notify_me">Whipped cream($1)</string>
+    <string name="chocolate">Chocolate($2)</string>
 </resources>

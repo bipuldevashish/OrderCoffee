@@ -58,7 +58,7 @@
                 android:layout_marginBottom="16dp"
                 android:buttonTint="@color/white"
                 android:paddingHorizontal="24dp"
-                android:text="Chocolate"
+                android:text="@string/chocolate"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
